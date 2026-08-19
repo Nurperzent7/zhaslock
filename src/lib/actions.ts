@@ -86,7 +86,7 @@ export async function search(query: string) {
 }
 
 export async function getOrders() {
-  return prisma.order.findMany({ orderBy: { createdAt: "desc" }, include: { items: true } });
+  return prisma.order.findMany({ orderBy: { createdAt: "desc" }, include: { items: true } }).catch(() => []);
 }
 
 export async function getDashboardStats() {

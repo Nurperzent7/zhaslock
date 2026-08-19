@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
 export default async function AdminProductsPage() {
-  const products = await prisma.product.findMany({ orderBy: { createdAt: "desc" } });
+  const products = await prisma.product.findMany({ orderBy: { createdAt: "desc" } }).catch(() => []);
 
   return (
     <div className="min-h-screen bg-muted/30 p-6">
