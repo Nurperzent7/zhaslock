@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "title": "Zhaslock — Smart Door Locks",
+    "description": "Premium smart door locks with installation, training and warranty. Selling in Kazakhstan."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Catalog",
+    "installation": "Installation Academy",
+    "videos": "Video Lessons",
+    "downloads": "Downloads",
+    "blog": "Blog",
+    "contact": "Contacts",
+    "calculator": "Calculator",
+    "compatibility": "Compatibility",
+    "booking": "Book Installation",
+    "compare": "Compare",
+    "gallery": "Gallery",
+    "cases": "Cases",
+    "map": "Delivery Zones",
+    "search": "Search"
+  },
+  "locale": {
+    "ru": "Русский",
+    "kk": "Қазақша",
+    "en": "English"
+  },
+  "hero": {
+    "headline": "Next-generation smart door locks",
+    "subtitle": "Security, style and access control from your smartphone. Installation in 60 minutes — on any door.",
+    "buy": "Buy",
+    "consult": "Get consultation",
+    "watch": "Watch installation video"
+  },
+  "advantages": {
+    "title": "All ways to unlock",
+    "items": [
+      { "title": "Fingerprint", "desc": "3D scanner with anti-spoofing" },
+      { "title": "PIN code", "desc": "Personal and temporary codes" },
+      { "title": "RFID card", "desc": "Contactless access for family" },
+      { "title": "Mobile app", "desc": "Control from iOS and Android" },
+      { "title": "Remote access", "desc": "Unlock from anywhere" },
+      { "title": "Temporary passwords", "desc": "For guests, couriers and rentals" },
+      { "title": "Auto-locking", "desc": "Door closes automatically" },
+      { "title": "Emergency key", "desc": "Mechanical access in any situation" },
+      { "title": "Battery backup", "desc": "Up to 12 months on battery" },
+      { "title": "Notifications", "desc": "Push and SMS on every unlock" },
+      { "title": "Anti-theft", "desc": "Alarm and tamper protection" },
+      { "title": "History logs", "desc": "Event log with faces and time" }
+    ]
+  },
+  "products": {
+    "title": "Popular locks",
+    "all": "All products",
+    "more": "More details",
+    "price": "Price",
+    "rating": "Rating",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "filters": {
+      "title": "Filters",
+      "brand": "Brand",
+      "color": "Color",
+      "price": "Price",
+      "features": "Features"
+    },
+    "sort": {
+      "newest": "Newest",
+      "popular": "Popular",
+      "priceAsc": "Price ↑",
+      "priceDesc": "Price ↓"
+    }
+  },
+  "whyUs": {
+    "title": "Why choose us",
+    "items": [
+      { "title": "Warranty up to 3 years", "desc": "Official warranty on locks and labor" },
+      { "title": "Turnkey installation", "desc": "A technician arrives at your convenience" },
+      { "title": "24/7 support", "desc": "Reply on WhatsApp, Telegram or call" },
+      { "title": "Delivery across Kazakhstan", "desc": "By courier or transport company" },
+      { "title": "Original products", "desc": "Only certified locks" },
+      { "title": "Training & setup", "desc": "We help configure the app" }
+    ]
+  },
+  "reviews": {
+    "title": "Customer reviews",
+    "average": "average rating",
+    "verified": "Verified buyer",
+    "items": [
+      { "name": "Alexander", "rating": 5, "text": "Great lock, installation took 40 minutes.", "avatar": "https://i.pravatar.cc/150?u=alex" },
+      { "name": "Dana", "rating": 5, "text": "Beautiful and reliable. Very satisfied.", "avatar": "https://i.pravatar.cc/150?u=dana" },
+      { "name": "Marat", "rating": 5, "text": "No need to carry keys anymore. The app is convenient.", "avatar": "https://i.pravatar.cc/150?u=marat" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      { "question": "Will the lock fit my door?", "answer": "Most locks fit doors 35-60 mm thick." },
+      { "question": "How long do batteries last?", "answer": "From 6 to 12 months with average use." },
+      { "question": "Is there a warranty?", "answer": "Yes, from 1 to 3 years depending on the model." }
+    ]
+  },
+  "newsletter": {
+    "title": "Stay tuned",
+    "subtitle": "Receive discounts, guides and new products",
+    "placeholder": "Your email",
+    "button": "Subscribe"
+  },
+  "contact": {
+    "title": "Contact us",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "lock": "Lock of interest",
+    "address": "Address",
+    "hours": "Business hours",
+    "send": "Send request",
+    "success": "Request sent! We will contact you."
+  },
+  "floating": {
+    "whatsapp": "Write on WhatsApp",
+    "call": "Call"
+  },
+  "installation": {
+    "title": "Installation Academy",
+    "categories": "Categories",
+    "read": "Read",
+    "minutes": "min read"
+  },
+  "admin": {
+    "login": "Admin login",
+    "dashboard": "Dashboard",
+    "logout": "Logout",
+    "products": "Products",
+    "categories": "Categories",
+    "articles": "Articles",
+    "videos": "Videos",
+    "gallery": "Gallery",
+    "faqs": "FAQs",
+    "reviews": "Reviews",
+    "orders": "Orders",
+    "customers": "Customers",
+    "settings": "Settings",
+    "seo": "SEO",
+    "save": "Save",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "footer": {
+    "contacts": "Contacts",
+    "info": "Information",
+    "social": "Social media",
+    "rights": "All rights reserved"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back to home"
+  }
+}
