@@ -1,12 +1,15 @@
 import Image from "next/image";
 
 const works = [
-  { src: "/products/h4-fv-black.png", title: "SHARP H4-FV" },
-  { src: "/products/h4-fv-gold.png", title: "SHARP H4-FV — бронза" },
-  { src: "/products/h4-fv-rose.png", title: "SHARP H4-FV — rose gold" },
-  { src: "/products/x9.png", title: "MY HOME X9" },
-  { src: "/products/s008.png", title: "S008 Tuya / TTLock" },
-  { src: "/products/qleung.png", title: "QLEUNG 3D Face" },
+  { src: "/products/s008.png", title: "S008 — 75 000 ₸" },
+  { src: "/products/s009.png", title: "S009 Black — 80 000 ₸" },
+  { src: "/products/a11-ultra.png", title: "A11 ULTRA — 90 000 ₸" },
+  { src: "/products/s958.png", title: "QLEUNG S958 — 100 000 ₸" },
+  { src: "/products/r15-pro.png", title: "R15 PRO — 140 000 ₸" },
+  { src: "/products/q8-pro-black.png", title: "Q8 PRO Black — 150 000 ₸" },
+  { src: "/products/q8-pro-bronze.png", title: "Q8 PRO Bronze — 150 000 ₸" },
+  { src: "/products/h4-fv-black.png", title: "SHARP H4 — 185 000 ₸" },
+  { src: "/products/h4-fv-gold.png", title: "SHARP H4 Gold — 195 000 ₸" },
 ];
 
 export default function GalleryPage() {

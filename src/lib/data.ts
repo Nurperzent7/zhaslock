@@ -62,25 +62,23 @@ async function withDb<T>(fn: () => Promise<T>, fallback: T | (() => T)): Promise
 
 export async function ensureProducts() {
   try {
-    const existing = await prisma.product.findMany({ select: { slug: true } });
-    const slugs = new Set(existing.map((r) => r.slug));
-    const hasDummy = obsoleteProductSlugs.some((slug) => slugs.has(slug));
-    const missingSeed = sampleProducts.some((p) => !slugs.has(p.slug));
-    if (existing.length > 0 && !hasDummy && !missingSeed) return;
+    const existing = await prisma.product.findMany({ select: { slug: true, price: true } });
+    const bySlug = new Map(existing.map((r) => [r.slug, r.price]));
+    const hasObsolete = obsoleteProductSlugs.some((slug) => bySlug.has(slug));
+    const needsSync =
+      hasObsolete ||
+      sampleProducts.some((p) => !bySlug.has(p.slug) || bySlug.get(p.slug) !== p.price);
+    if (existing.length > 0 && !needsSync) return;
 
     for (const p of sampleProducts) {
       const tags = { connectOrCreate: p.tags.map((t) => ({ where: { name: t }, create: { name: t } })) };
-      const shouldReplace = hasDummy || existing.length === 0 || !slugs.has(p.slug);
-      if (!shouldReplace) continue;
       await prisma.product.upsert({
         where: { slug: p.slug },
         update: { ...productScalarData(p), tags: { set: [], ...tags } },
         create: { ...productScalarData(p), tags },
       });
     }
-    if (hasDummy) {
-      await prisma.product.deleteMany({ where: { slug: { in: obsoleteProductSlugs } } });
-    }
+    await prisma.product.deleteMany({ where: { slug: { in: obsoleteProductSlugs } } });
   } catch {
     return;
   }
