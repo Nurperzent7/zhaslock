@@ -120,8 +120,8 @@ export const sampleProducts: ProductSeed[] = [
       "S008 — Tuya және TTLock бар күңгірт қара ақылды құлып. Құпия сөз, IC-карта және тұтқадағы саусақ ізімен ашылады. IP68, жасырын кілт тесігі және Type-C авариялық қорек.",
       "S008 is a matte-black smart lock for Tuya and TTLock. Unlock with password, IC card or the handle fingerprint sensor. IP68, hidden keyhole and Type-C emergency power."
     ),
-    thumbnail: "/products/s008.png",
-    gallery: ["/products/s008.png"],
+    thumbnail: "/products/s008.jpg",
+    gallery: ["/products/s008.jpg"],
     features: [
       L("Отпечаток на ручке", "Тұтқадағы саусақ ізі", "Fingerprint on handle"),
       L("Пароль / IC-карта", "Құпия сөз / IC-карта", "Password / IC card"),
@@ -155,8 +155,8 @@ export const sampleProducts: ProductSeed[] = [
       "S009 Black — рычаг тұтқалы күңгірт құлып. Құпия сөз, IC-карта, тұтқадағы саусақ ізі, жасырын кілт тесігі және Type-C. Ішінде 4 батарея бөлімі.",
       "S009 Black is a matte lever-handle lock. Password, IC card, fingerprint in the handle, hidden keyhole and Type-C. Four battery compartments inside."
     ),
-    thumbnail: "/products/s009.png",
-    gallery: ["/products/s009.png"],
+    thumbnail: "/products/s009.jpg",
+    gallery: ["/products/s009.jpg"],
     features: [
       L("Пароль и IC-карта", "Құпия сөз және IC-карта", "Password and IC card"),
       L("Отпечаток на ручке", "Тұтқадағы саусақ ізі", "Fingerprint on handle"),
@@ -189,8 +189,8 @@ export const sampleProducts: ProductSeed[] = [
       "A11 ULTRA — жүз, алақан, саусақ ізі, PIN, RFID және Tuya қолданбасы бар құлып. Батареямен 12 айға дейін. Kaspi RED және 0-0-12.",
       "A11 ULTRA is a smart lock with face and palm recognition, fingerprint, PIN, RFID and the Tuya app. Up to 12 months on batteries. Kaspi RED and 0-0-12 installment."
     ),
-    thumbnail: "/products/a11-ultra.png",
-    gallery: ["/products/a11-ultra.png"],
+    thumbnail: "/products/a11-ultra.jpg",
+    gallery: ["/products/a11-ultra.jpg"],
     features: [
       L("Распознавание лица", "Жүзді тану", "Face recognition"),
       L("Распознавание ладони", "Алақанды тану", "Palm recognition"),
@@ -223,8 +223,8 @@ export const sampleProducts: ProductSeed[] = [
       "QLEUNG S958 — 3D жүз тану, сенсорлық пернетақта, саусақ ізі және ішкі экраны бар құлып. Сыртқы камера бейнекөзшік ретінде жұмыс істейді.",
       "QLEUNG S958 is a smart lock with 3D face recognition, a touch keypad, fingerprint sensor and an indoor colour screen. The outdoor camera works as a video peephole."
     ),
-    thumbnail: "/products/s958.png",
-    gallery: ["/products/s958.png"],
+    thumbnail: "/products/s958.jpg",
+    gallery: ["/products/s958.jpg"],
     features: [
       L("3D Face Recognition", "3D Face Recognition", "3D Face Recognition"),
       L("Внутренний видеоэкран", "Ішкі бейнеэкран", "Indoor video screen"),
@@ -257,8 +257,8 @@ export const sampleProducts: ProductSeed[] = [
       "R15 PRO — екі камералы ақылды құлып. Сыртында AI-камера мен пернетақта, ішінде түрлі-түсті экран. Жүз, саусақ ізі және PIN арқылы ашылады.",
       "R15 PRO is a dual-camera smart lock. Outside: AI camera, display and keypad. Inside: a colour video-intercom screen. Unlock with face, fingerprint or PIN."
     ),
-    thumbnail: "/products/r15-pro.png",
-    gallery: ["/products/r15-pro.png"],
+    thumbnail: "/products/r15-pro.jpg",
+    gallery: ["/products/r15-pro.jpg"],
     features: [
       L("2 камеры", "2 камера", "2 cameras"),
       L("AI-камера снаружи", "Сыртқы AI-камера", "Outdoor AI camera"),
@@ -290,8 +290,8 @@ export const sampleProducts: ProductSeed[] = [
       "Q8 PRO — екі камералы құлып: сыртында AI-камера, ішінде экран. Тұтқадағы саусақ ізі, Wi-Fi 2.4 GHz. Қара және қола. Кез келген түсі 150 000 ₸.",
       "Q8 PRO is a dual-camera lock: AI camera outside and a colour screen inside. Fingerprint on the handle, Wi-Fi 2.4 GHz. Black or bronze, 150,000 ₸ either colour."
     ),
-    thumbnail: "/products/q8-pro-black.png",
-    gallery: ["/products/q8-pro-black.png", "/products/q8-pro-bronze.png"],
+    thumbnail: "/products/q8-pro-black.jpg",
+    gallery: ["/products/q8-pro-black.jpg", "/products/q8-pro-bronze.jpg"],
     features: [
       L("2 камеры", "2 камера", "2 cameras"),
       L("AI Camera / Face", "AI Camera / Face", "AI Camera / Face"),
@@ -325,8 +325,8 @@ export const sampleProducts: ProductSeed[] = [
       "SHARP H4-FV — 3D Face ID, алақан көктамыры, саусақ ізі, PIN, RFID, кілт, Wi-Fi және AI-бейнекөзшік. Қара. Kaspi RED және 0-0-12.",
       "SHARP H4-FV is a flagship lock with 3D Face ID, palm-vein scan, fingerprint, PIN, RFID, key, Wi-Fi and an AI peephole. Black. Kaspi RED and 0-0-12 installment."
     ),
-    thumbnail: "/products/h4-fv-black.png",
-    gallery: ["/products/h4-fv-black.png"],
+    thumbnail: "/products/h4-fv-black.jpg",
+    gallery: ["/products/h4-fv-black.jpg"],
     features: [
       L("3D Face ID", "3D Face ID", "3D Face ID"),
       L("Сканер вен ладони", "Алақан көктамыры", "Palm vein"),
@@ -360,8 +360,8 @@ export const sampleProducts: ProductSeed[] = [
       "SHARP H4-FV Gold — флагманның қола нұсқасы: 3D Facial Recognition AI Camera, AI peephole және карта.",
       "SHARP H4-FV Gold is the bronze flagship: 3D Facial Recognition AI Camera, AI peephole and card access."
     ),
-    thumbnail: "/products/h4-fv-gold.png",
-    gallery: ["/products/h4-fv-gold.png"],
+    thumbnail: "/products/h4-fv-gold.jpg",
+    gallery: ["/products/h4-fv-gold.jpg"],
     features: [
       L("3D Facial Recognition AI Camera", "3D Facial Recognition AI Camera", "3D Facial Recognition AI Camera"),
       L("AI peephole", "AI peephole", "AI peephole"),
