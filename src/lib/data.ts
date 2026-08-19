@@ -62,12 +62,15 @@ async function withDb<T>(fn: () => Promise<T>, fallback: T | (() => T)): Promise
 
 export async function ensureProducts() {
   try {
-    const existing = await prisma.product.findMany({ select: { slug: true, price: true } });
-    const bySlug = new Map(existing.map((r) => [r.slug, r.price]));
+    const existing = await prisma.product.findMany({ select: { slug: true, price: true, thumbnail: true } });
+    const bySlug = new Map(existing.map((r) => [r.slug, r]));
     const hasObsolete = obsoleteProductSlugs.some((slug) => bySlug.has(slug));
     const needsSync =
       hasObsolete ||
-      sampleProducts.some((p) => !bySlug.has(p.slug) || bySlug.get(p.slug) !== p.price);
+      sampleProducts.some((p) => {
+        const row = bySlug.get(p.slug);
+        return !row || row.price !== p.price || row.thumbnail !== p.thumbnail;
+      });
     if (existing.length > 0 && !needsSync) return;
 
     for (const p of sampleProducts) {

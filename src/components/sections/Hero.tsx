@@ -16,7 +16,7 @@ export function Hero() {
     <section className="relative -mt-16 flex min-h-[100svh] items-center overflow-hidden bg-[#06090f] text-white">
       <div className="absolute inset-0">
         <Image
-          src="/products/q8-pro-black.png"
+          src="/products/q8-pro-black.jpg"
           alt="Smart door lock"
           fill
           priority

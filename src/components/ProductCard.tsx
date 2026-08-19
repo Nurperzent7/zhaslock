@@ -19,7 +19,7 @@ export function ProductCard({ product, locale }: { product: ProductSeed; locale:
     <article className="group flex flex-col">
       <Link
         href={`/${activeLocale}/products/${product.slug}`}
-        className="relative aspect-[4/3] overflow-hidden bg-[#0b1220]"
+        className="relative aspect-[4/3] overflow-hidden bg-white"
       >
         <Image
           src={product.thumbnail}
