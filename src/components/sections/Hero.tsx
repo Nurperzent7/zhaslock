@@ -16,11 +16,11 @@ export function Hero() {
     <section className="relative -mt-16 flex min-h-[100svh] items-center overflow-hidden bg-[#06090f] text-white">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2400&q=85"
+          src="/products/q8-pro-black.png"
           alt="Smart door lock"
           fill
           priority
-          className="object-cover object-[70%_center] animate-ken-burns"
+          className="object-contain object-center animate-ken-burns"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#06090f]/92 via-[#0b1220]/55 to-[#0b1220]/25" />

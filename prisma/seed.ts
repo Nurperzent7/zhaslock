@@ -1,6 +1,15 @@
 import { hashSync } from "bcryptjs";
 import { prisma } from "../src/lib/prisma";
-import { sampleProducts, categoriesSeed, articlesSeed, videosSeed, faqsSeed, reviewsSeed, casesSeed } from "../src/lib/seedData";
+import { sampleProducts, categoriesSeed, articlesSeed, videosSeed, faqsSeed, reviewsSeed, casesSeed, productScalarData, obsoleteProductSlugs } from "../src/lib/seedData";
+
+async function upsertProduct(p: (typeof sampleProducts)[number]) {
+  const tags = { connectOrCreate: p.tags.map((t) => ({ where: { name: t }, create: { name: t } })) };
+  await prisma.product.upsert({
+    where: { slug: p.slug },
+    update: { ...productScalarData(p), tags: { set: [], ...tags } },
+    create: { ...productScalarData(p), tags },
+  });
+}
 
 async function main() {
   const email = process.env.ADMIN_EMAIL || "admin@zhaslock.kz";
@@ -26,42 +35,10 @@ async function main() {
   }
 
   for (const p of sampleProducts) {
-    await prisma.product.upsert({
-      where: { slug: p.slug },
-      update: {
-        thumbnail: p.thumbnail,
-        gallery: JSON.stringify(p.gallery),
-      },
-      create: {
-        slug: p.slug,
-        brand: p.brand,
-        model: p.model,
-        price: p.price,
-        currency: p.currency,
-        oldPrice: p.oldPrice,
-        name: JSON.stringify(p.name),
-        shortDescription: JSON.stringify(p.shortDescription),
-        description: JSON.stringify(p.description),
-        thumbnail: p.thumbnail,
-        gallery: JSON.stringify(p.gallery),
-        features: JSON.stringify(p.features),
-        specifications: JSON.stringify(p.specifications),
-        stock: p.stock,
-        rating: p.rating,
-        reviewCount: p.reviewCount,
-        colors: JSON.stringify(p.colors),
-        tags: { connectOrCreate: p.tags.map((t) => ({ where: { name: t }, create: { name: t } })) },
-        installationVideo: p.installationVideo,
-        manualPDF: p.manualPDF,
-        firmware: p.firmware,
-        isPopular: p.isPopular,
-        isNew: p.isNew,
-        availability: p.availability,
-        warrantyMonths: p.warrantyMonths,
-        relatedSlugs: JSON.stringify(p.relatedSlugs),
-      },
-    });
+    await upsertProduct(p);
   }
+
+  await prisma.product.deleteMany({ where: { slug: { in: obsoleteProductSlugs } } });
 
   const products = await prisma.product.findMany();
 

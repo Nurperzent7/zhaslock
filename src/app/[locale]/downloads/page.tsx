@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/button";
 import { FileText, Download } from "lucide-react";
 
 const downloads = [
-  { title: "Инструкция Aqara A100", size: "2.4 MB", type: "PDF" },
-  { title: "Инструкция Yale Lyra", size: "1.8 MB", type: "PDF" },
-  { title: "Прошивка Aqara A100", size: "12 MB", type: "Firmware" },
-  { title: "Приложение Android", size: "45 MB", type: "App" },
-  { title: "Приложение iOS", size: "App Store", type: "App" },
-  { title: "Гарантийный талон", size: "0.5 MB", type: "PDF" },
+  { title: "Приложение Tuya Smart (Android)", size: "Google Play", type: "App" },
+  { title: "Приложение Tuya Smart (iOS)", size: "App Store", type: "App" },
+  { title: "Приложение TTLock (Android)", size: "Google Play", type: "App" },
+  { title: "Приложение TTLock (iOS)", size: "App Store", type: "App" },
+  { title: "Гарантийный талон", size: "PDF", type: "PDF" },
 ];
 
 export default function DownloadsPage() {

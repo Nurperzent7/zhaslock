@@ -1,12 +1,15 @@
 import Image from "next/image";
 
 const works = [
-  { src: "https://images.unsplash.com/photo-1582050134757-565e361a89ef?auto=format&fit=crop&w=800&q=80", title: "Smart Lock Pro" },
-  { src: "https://images.unsplash.com/photo-1585338107529-13afc5f02542?auto=format&fit=crop&w=800&q=80", title: "Yale Lyra" },
-  { src: "https://images.unsplash.com/photo-1581578731117-104f2a6b8722?auto=format&fit=crop&w=800&q=80", title: "Aqara A100" },
-  { src: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80", title: "Xiaomi M30" },
-  { src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80", title: "Дом в Алматы" },
-  { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", title: "Офис" },
+  { src: "/products/s008.png", title: "S008 — 75 000 ₸" },
+  { src: "/products/s009.png", title: "S009 Black — 80 000 ₸" },
+  { src: "/products/a11-ultra.png", title: "A11 ULTRA — 90 000 ₸" },
+  { src: "/products/s958.png", title: "QLEUNG S958 — 100 000 ₸" },
+  { src: "/products/r15-pro.png", title: "R15 PRO — 140 000 ₸" },
+  { src: "/products/q8-pro-black.png", title: "Q8 PRO Black — 150 000 ₸" },
+  { src: "/products/q8-pro-bronze.png", title: "Q8 PRO Bronze — 150 000 ₸" },
+  { src: "/products/h4-fv-black.png", title: "SHARP H4 — 185 000 ₸" },
+  { src: "/products/h4-fv-gold.png", title: "SHARP H4 Gold — 195 000 ₸" },
 ];
 
 export default function GalleryPage() {
@@ -18,8 +21,8 @@ export default function GalleryPage() {
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {works.map((w, i) => (
-            <div key={i} className="group relative aspect-square overflow-hidden rounded-3xl bg-graySoft">
-              <Image src={w.src} alt={w.title} fill className="object-cover transition-transform group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+            <div key={i} className="group relative aspect-square overflow-hidden rounded-3xl bg-[#0b1220]">
+              <Image src={w.src} alt={w.title} fill className="object-contain p-6 transition-transform group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
                 <span className="text-lg font-semibold text-white">{w.title}</span>
               </div>

@@ -15,7 +15,7 @@ export default function ComparePage() {
     getProducts(locale).then(setProducts);
   }, []);
 
-  const features = ["Fingerprint", "PIN", "RFID", "Wi-Fi", "Bluetooth", "Camera", "Face Recognition"];
+  const features = ["Fingerprint", "PIN", "RFID", "WiFi", "Camera", "Face Recognition", "Palm", "Tuya"];
 
   return (
     <section className="py-16 lg:py-24">
@@ -36,7 +36,7 @@ export default function ComparePage() {
             <tbody>
               <tr className="border-b border-border">
                 <td className="p-6 font-medium">Цена</td>
-                {products.map((p) => <td key={p.slug} className="p-6 text-center font-semibold">{p.price.toLocaleString("ru-RU")} ₸</td>)}
+                {products.map((p) => <td key={p.slug} className="p-6 text-center font-semibold">{p.price > 0 ? `${p.price.toLocaleString("ru-RU")} ₸` : "по запросу"}</td>)}
               </tr>
               {features.map((f) => (
                 <tr key={f} className="border-b border-border">

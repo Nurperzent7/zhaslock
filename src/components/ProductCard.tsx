@@ -19,13 +19,13 @@ export function ProductCard({ product, locale }: { product: ProductSeed; locale:
     <article className="group flex flex-col">
       <Link
         href={`/${activeLocale}/products/${product.slug}`}
-        className="relative aspect-[4/3] overflow-hidden bg-graySoft"
+        className="relative aspect-[4/3] overflow-hidden bg-[#0b1220]"
       >
         <Image
           src={product.thumbnail}
           alt={getLocalized(product.name, activeLocale) as string}
           fill
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {product.isNew && (

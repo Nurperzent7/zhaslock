@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 function sortProducts(products: any[], sort: string | null) {
-  if (sort === "priceAsc") return [...products].sort((a, b) => a.price - b.price);
-  if (sort === "priceDesc") return [...products].sort((a, b) => b.price - a.price);
+  if (sort === "priceAsc") return [...products].sort((a, b) => (a.price || Number.POSITIVE_INFINITY) - (b.price || Number.POSITIVE_INFINITY));
+  if (sort === "priceDesc") return [...products].sort((a, b) => (b.price || 0) - (a.price || 0));
   if (sort === "popular") return [...products].sort((a, b) => b.rating - a.rating);
   return [...products].sort((a, b) => (a.isNew === b.isNew ? 0 : a.isNew ? -1 : 1));
 }

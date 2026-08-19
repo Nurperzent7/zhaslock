@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { Locale } from "./utils";
-import { sampleProducts, articlesSeed, videosSeed, faqsSeed, reviewsSeed, casesSeed, categoriesSeed, ProductSeed } from "./seedData";
+import { sampleProducts, articlesSeed, videosSeed, faqsSeed, reviewsSeed, casesSeed, categoriesSeed, ProductSeed, productScalarData, obsoleteProductSlugs } from "./seedData";
 
 function safeJson<T>(value: string | null | undefined, fallback: T): T {
   if (!value) return fallback;
@@ -61,39 +61,26 @@ async function withDb<T>(fn: () => Promise<T>, fallback: T | (() => T)): Promise
 }
 
 export async function ensureProducts() {
-  const count = await prisma.product.count().catch(() => -1);
-  if (count === -1 || count > 0) return;
-  for (const p of sampleProducts) {
-    await prisma.product.create({
-      data: {
-        slug: p.slug,
-        brand: p.brand,
-        model: p.model,
-        price: p.price,
-        currency: p.currency,
-        oldPrice: p.oldPrice,
-        name: JSON.stringify(p.name),
-        shortDescription: JSON.stringify(p.shortDescription),
-        description: JSON.stringify(p.description),
-        thumbnail: p.thumbnail,
-        gallery: JSON.stringify(p.gallery),
-        features: JSON.stringify(p.features),
-        specifications: JSON.stringify(p.specifications),
-        stock: p.stock,
-        rating: p.rating,
-        reviewCount: p.reviewCount,
-        colors: JSON.stringify(p.colors),
-        tags: { connectOrCreate: p.tags.map((t) => ({ where: { name: t }, create: { name: t } })) },
-        installationVideo: p.installationVideo,
-        manualPDF: p.manualPDF,
-        firmware: p.firmware,
-        isPopular: p.isPopular,
-        isNew: p.isNew,
-        availability: p.availability,
-        warrantyMonths: p.warrantyMonths,
-        relatedSlugs: JSON.stringify(p.relatedSlugs),
-      },
-    }).catch(() => null);
+  try {
+    const existing = await prisma.product.findMany({ select: { slug: true, price: true } });
+    const bySlug = new Map(existing.map((r) => [r.slug, r.price]));
+    const hasObsolete = obsoleteProductSlugs.some((slug) => bySlug.has(slug));
+    const needsSync =
+      hasObsolete ||
+      sampleProducts.some((p) => !bySlug.has(p.slug) || bySlug.get(p.slug) !== p.price);
+    if (existing.length > 0 && !needsSync) return;
+
+    for (const p of sampleProducts) {
+      const tags = { connectOrCreate: p.tags.map((t) => ({ where: { name: t }, create: { name: t } })) };
+      await prisma.product.upsert({
+        where: { slug: p.slug },
+        update: { ...productScalarData(p), tags: { set: [], ...tags } },
+        create: { ...productScalarData(p), tags },
+      });
+    }
+    await prisma.product.deleteMany({ where: { slug: { in: obsoleteProductSlugs } } });
+  } catch {
+    return;
   }
 }
 

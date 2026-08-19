@@ -19,6 +19,7 @@ export function getLocalized<T>(value: Localized | undefined, locale: Locale): T
 }
 
 export function formatPrice(value: number, currency = "KZT") {
+  if (!value || value <= 0) return "Цена по запросу";
   return new Intl.NumberFormat("ru-RU", {
     style: "currency",
     currency,
