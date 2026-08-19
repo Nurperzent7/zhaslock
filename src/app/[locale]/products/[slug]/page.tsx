@@ -114,6 +114,9 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
                 <iframe src={product.installationVideo} className="h-full w-full" allowFullScreen />
               </div>
             )}
+            <p className="max-w-2xl text-muted-foreground">
+              Установка занимает около 60 минут. Мастер подберёт ригель под вашу дверь и настроит приложение.
+            </p>
             <div className="flex gap-4">
               {product.manualPDF && <a href={product.manualPDF} download className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-muted"><FileText className="h-4 w-4" /> Инструкция PDF</a>}
               {product.firmware && <a href={product.firmware} download className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-muted"><Download className="h-4 w-4" /> Прошивка</a>}

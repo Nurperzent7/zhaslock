@@ -46,7 +46,7 @@ export function ProductFilters({ brands, className }: { brands: string[]; classN
     router.push(`${pathname}?${sp.toString()}`);
   };
 
-  const features = ["Fingerprint", "WiFi", "Bluetooth", "Face Recognition", "Camera", "RFID"];
+  const features = ["Fingerprint", "WiFi", "Face Recognition", "Camera", "RFID", "Palm", "Tuya", "IP68"];
 
   return (
     <div className={cn("space-y-4 rounded-2xl border border-border bg-card p-6 shadow-soft", className)}>

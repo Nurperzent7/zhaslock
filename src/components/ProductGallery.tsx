@@ -9,12 +9,12 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square overflow-hidden rounded-3xl bg-graySoft shadow-soft">
+      <div className="relative aspect-square overflow-hidden rounded-3xl bg-[#0b1220] shadow-soft">
         <Image
           src={thumbs[selected]}
           alt={alt}
           fill
-          className="object-cover"
+          className="object-contain p-6"
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
@@ -29,7 +29,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
                 selected === i ? "border-accent" : "border-transparent"
               }`}
             >
-              <Image src={img} alt={`${alt} ${i + 1}`} fill className="object-cover" sizes="80px" />
+              <Image src={img} alt={`${alt} ${i + 1}`} fill className="object-contain bg-[#0b1220] p-1" sizes="80px" />
             </button>
           ))}
         </div>
