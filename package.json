@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "DATABASE_URL=\"${DATABASE_URL:-file:./prisma/dev.db}\" prisma generate && DATABASE_URL=\"${DATABASE_URL:-file:./prisma/dev.db}\" prisma db push --skip-generate && next build",
     "build:local": "prisma generate && prisma db push && next build",
     "start": "next start",
     "lint": "next lint",
