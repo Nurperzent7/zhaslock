@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -32,39 +31,19 @@ export function Hero() {
 
       <div className="relative z-10 w-full px-4 pb-16 pt-28 sm:pb-20 lg:px-8 lg:pt-32">
         <div className="container mx-auto max-w-5xl">
-          <motion.p
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-[clamp(2.75rem,10vw,6.75rem)] font-bold leading-[0.92] tracking-[-0.04em]"
-          >
+          <p className="font-display text-[clamp(2.75rem,10vw,6.75rem)] font-bold leading-[0.92] tracking-[-0.04em]">
             Zhas<span className="text-teal-300">lock</span>
-          </motion.p>
+          </p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 max-w-xl text-balance text-lg font-medium tracking-tight text-white/90 sm:text-2xl md:text-[1.75rem]"
-          >
+          <h1 className="mt-5 max-w-xl text-balance text-lg font-medium tracking-tight text-white/90 sm:text-2xl md:text-[1.75rem]">
             {t("headline")}
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-3 max-w-md text-sm text-white/65 sm:text-base"
-          >
+          <p className="mt-3 max-w-md text-sm text-white/65 sm:text-base">
             {t("subtitle")}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 flex flex-wrap items-center gap-3"
-          >
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link href={`/${locale}/products`}>
               <Button
                 size="lg"
@@ -91,7 +70,7 @@ export function Hero() {
               </span>
               {t("watch")}
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
